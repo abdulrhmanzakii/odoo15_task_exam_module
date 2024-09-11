@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_exams_details" model="ir.actions.report">
+        <field name="name">Exam Details</field>
+        <field name="model">your.exam</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">exam_your_name.report_exam_details</field>
+        <field name="report_file">exam_your_name.report_exam_details</field>
+        <field name="binding_model_id" ref="model_your_exam"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//th[@name='th_description']" position="after">
+            <th name="th_quent" class="text-left">Qunet</th>
+            <th name="th_deg" class="text-left">Degree</th>
+        </xpath>
+        <xpath expr="//td[@name='td_name']" position="after">
+            <td name="td_quent">
+                <span t-field="doc.qunet"/>
+            </td>
+            <td name="td_deg">
+                <span t-field="doc.deg"/>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>

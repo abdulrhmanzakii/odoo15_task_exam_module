@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.model.access" id="access_exam_manger">
+        <field name="name">access manager</field>
+        <field name="model_id" ref="model_your_exam"/>
+        <field name="group_id" ref="exam_your_name.group_manager_button"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record model="ir.model.access" id="access_exam_employee">
+        <field name="name">access employee</field>
+        <field name="model_id" ref="model_your_exam"/>
+        <field name="group_id" ref="exam_your_name.group_employee_button"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">0</field>
+        <field name="perm_unlink">0</field>
+    </record>
+    <record model="ir.model.access" id="access_exam_general">
+        <field name="name">access general</field>
+        <field name="model_id" ref="model_your_exam"/>
+        <field name="group_id" ref="exam_your_name.group_general_button"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">0</field>
+        <field name="perm_create">0</field>
+        <field name="perm_unlink">0</field>
+    </record>
+    <record model="ir.model.access" id="access_exam_type_manager">
+        <field name="name">access exam type manager</field>
+        <field name="model_id" ref="model_exam_type"/>
+        <field name="group_id" ref="exam_your_name.group_manager_button"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">1</field>
+    </record>
+    <record model="ir.model.access" id="access_exam_type_employee">
+        <field name="name">access exam type employee</field>
+        <field name="model_id" ref="model_exam_type"/>
+        <field name="group_id" ref="exam_your_name.group_employee_button"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">0</field>
+        <field name="perm_unlink">0</field>
+    </record>
+    <record model="ir.model.access" id="access_exam_type_general">
+        <field name="name">access exam type general</field>
+        <field name="model_id" ref="model_exam_type"/>
+        <field name="group_id" ref="exam_your_name.group_general_button"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">0</field>
+        <field name="perm_create">0</field>
+        <field name="perm_unlink">0</field>
+    </record>
+
+
+    <record id="module_category_exam" model="ir.module.category">
+        <field name="name">Your Exam Module</field>
+    </record>
+
+
+    <record id="group_manager_button" model="res.groups">
+        <field name="name">manager</field>
+        <!-- <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+        <field name="category_id" ref="exam_your_name.module_category_exam"/>
+        <field name="implied_ids"
+               eval="[(4, ref('exam_your_name.group_employee_button')) ,(4, ref('base.group_user'))]"/>
+
+    </record>
+    <record id="group_employee_button" model="res.groups">
+        <field name="name">Employee</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="exam_your_name.module_category_exam"/>
+
+    </record>
+    <record id="group_general_button" model="res.groups">
+        <field name="name">General</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="category_id" ref="exam_your_name.module_category_exam"/>
+
+    </record>
+
+
+</odoo>

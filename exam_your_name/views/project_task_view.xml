@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="view_project_task_form_inherit" model="ir.ui.view">
+            <field name="name">project.task.inherit</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="after">
+                    <field name="exam"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Others" name="others_page">
+                        <group>
+                            <field name="res_partner_id" options="{'no_create' : True}"/>
+                            <field name="gender" widget="radio"/>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,7 @@
+<odoo>
+
+
+    <menuitem id="product_menu" name="My Product" parent="exam_your_name.menu_configuration_master"
+              action="account.product_product_action_sellable"/>
+
+</odoo>

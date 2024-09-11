@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_exam_type_tree" model="ir.ui.view">
+        <field name="name">exam.type.tree</field>
+        <field name="model">exam.type</field>
+        <field name="arch" type="xml">
+            <tree sample="1">
+                <field name="name" optional="show"/>
+                <field name="serial" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_exam_type_form" model="ir.ui.view">
+        <field name="name">exam.type.form</field>
+        <field name="model">exam.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" nolabel="1"
+                               statusbar_visible="draft,finished"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="serial"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                </sheet>
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids" groups="base.group_user"/>-->
+<!--                    <field name="message_ids"/>-->
+<!--                    <field name="activity_ids"/>-->
+<!--                </div>-->
+            </form>
+        </field>
+    </record>
+
+    <record id="view_exam_type_search" model="ir.ui.view">
+        <field name="name">exam.type.search</field>
+        <field name="model">exam.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0" string="Group By">
+                    <filter name="serial" string="Serial Group" domain="[]" context="{'group_by': 'serial'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_exam_type">
+        <field name="name">Exam Type</field>
+        <field name="res_model">exam.type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_no_content_smiling_face">
+                Create the first Exam Type!
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Exam Type"
+              id="menu_exam_type"
+              action="action_exam_type"
+              parent="menu_exam_type_master"
+              sequence="0"/>
+
+
+</odoo>

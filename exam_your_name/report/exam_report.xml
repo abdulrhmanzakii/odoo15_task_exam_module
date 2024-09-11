@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_exam_details">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="text-center">
+                        <center>
+                            <div class="page">
+                                <div class="text-center">
+                                    <h1>
+                                        The Exam Report
+                                    </h1>
+                                </div>
+                                <div class="row">
+                                    <table class="table table-bordered mt32" style="font-size:22px">
+                                        <thead>
+                                            <tr>
+                                                <th name="th_name" class="text-left">
+                                                    <span>Student Name</span>
+                                                </th>
+                                                <th name="th_exam_type" class="text-left">
+                                                    <span>Exam Type</span>
+                                                </th>
+                                                <th name="th_serial" class="text-left">
+                                                    <span>Serial Num</span>
+                                                </th>
+                                                <th name="th_start_date" class="text-left">
+                                                    <span>End Date</span>
+                                                </th>
+                                                <th name="th_mark" clas="text-left">
+                                                    <span>Mark</span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tr>
+                                            <td>
+                                                <span t-field="o.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.exam_type_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.serial_num"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.end_date"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="o.mark"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="footer">
+                                        <div class="text-left" style="border-top: 1px solid black;">
+                                            <td>
+                                                <h5>
+                                                    Manager Sig:
+                                                </h5>
+                                            </td>
+                                            <td>
+                                                <h5>
+                                                    Employee Sig:
+                                                </h5>
+                                            </td>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </center>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

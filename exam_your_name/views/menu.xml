@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Your exam"
+              id="menu_exam_root"
+              sequence="0"/>
+
+    <menuitem name="Exam"
+              id="menu_exam_master"
+              parent="menu_exam_root"
+              sequence="0"/>
+
+    <menuitem name="Exam Type"
+              id="menu_exam_type_master"
+              parent="menu_exam_root"
+              sequence="0"/>
+
+    <menuitem name="Configuration"
+              id="menu_configuration_master"
+              parent="menu_exam_root"
+              sequence="0"/>
+
+
+</odoo>
